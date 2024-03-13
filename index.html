@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+
+  <style>
+    /* Estilos básicos para la barra de navegación */
+    
+    body {
+        background-color: #090D11; /* Color de fondo */
+        background-image: url('tu-imagen.jpg'); /* URL de la imagen de fondo (opcional) */
+        background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el cuerpo */
+        background-position: center; /* Centra la imagen de fondo */
+    } 
+
+    .navbar {
+      background-color: #33333300;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between; /* Distribuye los elementos horizontalmente */
+      align-items: center; /* Centra verticalmente los elementos */
+      padding: 0 20px; /* Añade un poco de espacio a los lados */
+    }
+
+    .navbar-logo img {
+      max-width: 100px; /* Establece el tamaño máximo del logo */
+      height: auto;
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      flex-grow: 1; /* Permite que el contenedor crezca para ocupar el espacio disponible */
+      justify-content: center; /* Centra los elementos horizontalmente */
+      padding-right: 100px; /* Ajusta el espacio a la derecha para mover los elementos hacia la izquierda */
+    }
+
+    .navbar-links a {
+      font-size: 20px;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar-links a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+    .section {
+      text-align: center; /* Centra el contenido horizontalmente */
+      margin: 50px auto; /* Margen superior e inferior de 50px y centrado horizontal */
+      max-width: 600px; /* Ancho máximo de la sección */
+    }
+
+    /* Estilos para el título */
+    .section h2 {
+  font-size: 24px; /* Tamaño de fuente del título */
+  font-weight: 900;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  margin-bottom: 20px; /* Margen inferior del título */
+  color: #CA6AEC;
+}
+
+.section h1 {
+    font-size: 44px;
+    font-family: Avenir;
+  margin-bottom: 10px; /* Margen inferior del título */
+  margin-top: 0px;
+  background: linear-gradient(135deg, #E6D1FA, #50D710,#E6D1FA); /* Degradado de fondo */
+  -webkit-background-clip: text; /* Clip de fondo para que el degradado afecte al texto */
+  -webkit-text-fill-color: transparent; /* Color del texto transparente para que se muestre el degradado */
+  background-clip: text; /* Clip de fondo para compatibilidad */
+}
+
+    /* Estilos para los párrafos */
+    .section p {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 24px; /* Tamaño de fuente de los párrafos */
+  line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+  margin-bottom: 150px; /* Margen inferior de los párrafos */
+  background: linear-gradient(135deg, #F9ECFF, #F9ECFF); /* Degradado de fondo */
+  -webkit-background-clip: text; /* Clip de fondo para que el degradado afecte al texto */
+  -webkit-text-fill-color: transparent; /* Color del texto transparente para que se muestre el degradado */
+  background-clip: text; /* Clip de fondo para compatibilidad */
+}
+
+.contenedor-imagenes {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
+}
+
+.fila-imagenes {
+  display: inline-block;
+  /* Ajusta la duración para controlar la velocidad de la animación */
+  animation: desplazamiento 20s linear infinite;
+}
+
+.fila-imagenes img {
+  width: auto; /* O define un ancho específico para cada imagen */
+ margin-right: 80px;
+  display: inline-block; /* Mantiene las imágenes en línea */
+}
+
+
+
+@keyframes desplazamiento {
+  from {
+    transform: translateX(0%); /* Comienza justo fuera del lado derecho */
+  }
+  to {
+    transform: translateX(-50%); /* Mueve todo el contenido hasta que el final esté justo fuera del lado izquierdo */
+  }
+}
+
+.footer {   
+    
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 150px;
+        }
+
+        .footer-column {
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-logo img {
+            max-width: 100px; /* Ajusta según el tamaño de tu logo */
+            margin-bottom: 20px;
+        }
+
+        .footer-contact, .footer-pages, .footer-social {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-social a {
+            margin: 0 10px;
+        }
+
+        .footer-social a {
+           font-size: 32px;
+        }
+
+        .footer-social svg {
+            width: 50px; /* Tamaño de los iconos de redes sociales */
+            height: 50px;
+        }
+
+
+
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-logo">
+    <img src="./img/image.png" alt="Logo">
+  </div>
+  <div class="navbar-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#acerca">Acerca</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</div>
+
+<div class="section">
+    <h2>Heberto Hernandez</h2>
+    <h1>Un puente para conectar diseño y desarrollo creativo.</h1>
+    <p>Disfruto creando sitios web eficientes y escalables que ofrecen una excelente experiencia de usuario.</p>
+</div>
+
+<div class="contenedor-imagenes">
+    <div class="fila-imagenes">
+      <!-- Ejemplo con imágenes genéricas; reemplaza por tus propias imágenes -->
+      <img src="img/planet-mercury-illustration-by-Vexels.png" alt="Imagen 1" style=" height: 50px;"> <!--/* Ajusta la altura según sea necesario */--> 
+      <img src="img/planet-venus-illustration-by-Vexels.png" alt="Imagen 2" style=" height: 75px;">
+      <img src="img/planet-earth-illustration-earth-by-Vexels.png" alt="Imagen 3" style=" height: 100px;">
+      <img src="img/mars-planet-illustration-by-Vexels.png" alt="Imagen 4" style=" height: 90px;">
+      <img src="img/planet-jupiter-illustration-by-Vexels.png" alt="Imagen 5" style=" height: 200px;">
+      <img src="img/planet-saturn-illustration-by-Vexels.png" alt="Imagen 6" style=" height: 150px;">
+      <img src="img/planet-uranus-illustration-by-Vexels.png" alt="Imagen 7 " style=" height: 120px;">
+      <img src="img/neptune-planet-illustration-by-Vexels.png" alt="Imagen 8" style=" height: 80px;">
+      <img src="img/planet-pluto-illustration-by-Vexels.png" alt="Imagen 9" style=" height: 30px;">
+      <!-- Repite las imágenes para un efecto continuo -->
+      <img src="img/planet-mercury-illustration-by-Vexels.png" alt="Imagen 1" style=" height: 50px;"> <!--/* Ajusta la altura según sea necesario */--> 
+      <img src="img/planet-venus-illustration-by-Vexels.png" alt="Imagen 2" style=" height: 75px;">
+      <img src="img/planet-earth-illustration-earth-by-Vexels.png" alt="Imagen 3" style=" height: 100px;">
+      <img src="img/mars-planet-illustration-by-Vexels.png" alt="Imagen 4" style=" height: 90px;">
+      <img src="img/planet-jupiter-illustration-by-Vexels.png" alt="Imagen 5" style=" height: 200px;">
+      <img src="img/planet-saturn-illustration-by-Vexels.png" alt="Imagen 6" style=" height: 150px;">
+      <img src="img/planet-uranus-illustration-by-Vexels.png" alt="Imagen 7 " style=" height: 120px;">
+      <img src="img/neptune-planet-illustration-by-Vexels.png" alt="Imagen 8" style=" height: 80px;">
+      <img src="img/planet-pluto-illustration-by-Vexels.png" alt="Imagen 9" style=" height: 30px;">
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-column footer-logo">
+        <img src="./img/image.png" alt="Logo">
+    </div>
+    <div class="footer-column">
+        <h3>Información de Contacto</h3>
+        <ul class="footer-contact">
+            <li>Dirección: Calle Falsa 123</li>
+            <li>Teléfono: +123 456 7890</li>
+            <li>Email: contacto@ejemplo.com</li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>Páginas Principales</h3>
+        <ul class="footer-pages">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>Síguenos</h3>
+        <div class="footer-social">
+            <a href="https://github.com/hhernandez97" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/hhernandez97/" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/hhernandez97/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+             
+    </div>
+</footer>
+
+</body>
+</html>
